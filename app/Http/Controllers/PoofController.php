@@ -13,9 +13,19 @@ use App\Poof;
 class PoofController extends Controller
 {
     // 日記一覧へ
-    public function index(){
-        $poofs = Poof::paginate(5);
-
+    public function index(Request $request)
+    {
+        $query = Poof::query();
+    
+        $sort = $request->query('sort');
+        if ($sort === 'asc') {
+            $query->orderBy('date', 'asc');
+        } else if ($sort === 'desc') {
+            $query->orderBy('date', 'desc');
+        }
+    
+        $poofs = $query->paginate(7);
+    
         return view('/mypage/indexPoof', compact('poofs'));
     }
 
@@ -33,7 +43,6 @@ class PoofController extends Controller
         if($request->color === null || $request->shape === null || $request->smell === null){
             return redirect('/newPee')->with('flash_message', '保存に失敗しました');
         }
-
 
         //フォームの内容をDBに保存
         $food->fill([

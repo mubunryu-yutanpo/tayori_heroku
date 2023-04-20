@@ -1,26 +1,20 @@
 <template>
-    <div>
-        <button @click="updateInfo">
-            <i class="fa-solid fa-thumbtack"></i>
-        </button>
-    </div>
+    <button type="button" class="p_form-keep-btn" :class="{ 'keep': keepFlg }" @click="keepToggle">
+        <i class="fa-solid fa-thumbtack"></i>
+        <input name="keep" class="p_form-keep-input" type="checkbox" :checked="keepFlg">
+    </button>
 </template>
 
 <script>
-    import axios from 'axios';
-
     export default {
+        data: function(){
+            return{
+                keepFlg : false,
+            }
+        },
         methods: {
-            updateInfo() {
-                axios.post('/api/keep', {
-                    // パラメータを指定する
-                })
-                .then(response => {
-                    // 成功時の処理
-                })
-                .catch(error => {
-                    // 失敗時の処理
-                });
+            keepToggle: function(){
+                this.keepFlg = !this.keepFlg;
             }
         }
     }

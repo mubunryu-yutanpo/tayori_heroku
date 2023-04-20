@@ -17,9 +17,6 @@
     @csrf
 
      <div class="p_form-wrap">
-     <div id="app">
-    <example-component></example-component>
-  </div>
 
         <!-- 日時 -->
         <div class="p_form-content">

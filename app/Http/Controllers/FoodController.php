@@ -13,11 +13,22 @@ use App\Food;
 class FoodController extends Controller
 {
     // 日記一覧へ
-    public function index(){
-        $foods = Food::paginate(5);
-
+    public function index(Request $request)
+    {
+        $query = Food::query();
+    
+        $sort = $request->query('sort');
+        if ($sort === 'asc') {
+            $query->orderBy('date', 'asc');
+        } else if ($sort === 'desc') {
+            $query->orderBy('date', 'desc');
+        }
+    
+        $foods = $query->paginate(7);
+    
         return view('/mypage/indexFood', compact('foods'));
     }
+
     // 日記作成ページへ
     public function new(){
         return view('/mypage/newFood');

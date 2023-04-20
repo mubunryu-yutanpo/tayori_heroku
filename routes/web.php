@@ -19,10 +19,6 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::group(['prefix' => 'api'], function(){
-    Route::post('/update/keep', 'ApiController@keepPoof');
-});
-
 Route::get('/example', function () {
     return view('example');
 });

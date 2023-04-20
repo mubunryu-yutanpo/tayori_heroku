@@ -109,6 +109,22 @@ input {
   margin: 40px auto;
 }
 
+.c_main-sort {
+  width: 100%;
+  margin-bottom: 20px;
+  text-align: right;
+}
+
+.c_main-sort select {
+  border-radius: 3px;
+  background: rgb(182, 137, 115);
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  color: #fff;
+  margin-right: 15px;
+}
+
 @media screen and (max-width:767px) {
   .c_main {
     margin: 0 auto;
@@ -321,6 +337,34 @@ input {
   width: 90%;
   max-width: 980px;
   margin: 40px auto;
+}
+
+.p_form-keep-btn {
+  position: relative;
+  margin-right: 10px;
+}
+
+.p_form-keep-btn i {
+  font-size: 24px;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.p_form-keep-btn.keep i {
+  color: rgb(182, 137, 115);
+}
+
+.p_form-keep-input {
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: 0;
+}
+
+.p_form-content-keep {
+  text-align: right;
+  margin: 10px 0 30px;
 }
 
 .p_form-content-title {

@@ -2,7 +2,35 @@
     width: 90%;
     max-width: 980px;
     margin: $space_40 auto;
+    &-keep{
+        &-btn{
+            position: relative;
+            margin-right: $space-10;
+            & i{
+                font-size: $font-size_xl;
+                position: absolute;
+                top: 0;
+                right: 0;
+            }
+            &.keep{
+                & i{
+                    color: $brown;
+                }
+            }
+        }
+        &-input{
+            position: absolute;
+            opacity: 0;
+            top: 0;
+            right: 0;
+        }
+    }
+
     &-content{
+        &-keep{
+            text-align: right;
+            margin: $space-10 0 $space_30;
+        }
         &-title{
             background-color: $black;
             color: #fff;

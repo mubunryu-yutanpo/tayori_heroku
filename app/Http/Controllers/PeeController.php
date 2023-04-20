@@ -12,12 +12,23 @@ use App\Pee;
 
 class PeeController extends Controller
 {
-    // 日記一覧
-    public function index(){
-        $pees = Pee::paginate(5);
-
+    // 日記一覧へ
+    public function index(Request $request)
+    {
+        $query = Pee::query();
+    
+        $sort = $request->query('sort');
+        if ($sort === 'asc') {
+            $query->orderBy('date', 'asc');
+        } else if ($sort === 'desc') {
+            $query->orderBy('date', 'desc');
+        }
+    
+        $pees = $query->paginate(7);
+    
         return view('/mypage/indexPee', compact('pees'));
     }
+
     // 日記作成ページへ
     public function new(){
         return view('/mypage/newPee');

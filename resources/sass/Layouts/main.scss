@@ -2,6 +2,20 @@
     background-color: $yellow;
     max-width: 980px;
     margin: $space_40 auto;
+    &-sort{
+        width: 100%;
+        margin-bottom: $space-20;
+        text-align: right;
+        & select{
+            border-radius: 3px;
+            background: $brown;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            color: #fff;
+            margin-right: $space_default;
+        }
+    }
     @include mq(){
         margin: 0 auto;
     }

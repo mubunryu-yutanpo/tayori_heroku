@@ -1908,19 +1908,15 @@ module.exports = {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
-
 /* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      keepFlg: false
+    };
+  },
   methods: {
-    updateInfo: function updateInfo() {
-      axios__WEBPACK_IMPORTED_MODULE_0___default.a.post('/api/keep', {
-        // パラメータを指定する
-      }).then(function (response) {
-        // 成功時の処理
-      })["catch"](function (error) {
-        // 失敗時の処理
-      });
+    keepToggle: function keepToggle() {
+      this.keepFlg = !this.keepFlg;
     }
   }
 });
@@ -1941,13 +1937,29 @@ __webpack_require__.r(__webpack_exports__);
 var render = function render() {
   var _vm = this,
     _c = _vm._self._c;
-  return _c("div", [_c("button", {
+  return _c("button", {
+    staticClass: "p_form-keep-btn",
+    "class": {
+      keep: _vm.keepFlg
+    },
+    attrs: {
+      type: "button"
+    },
     on: {
-      click: _vm.updateInfo
+      click: _vm.keepToggle
     }
   }, [_c("i", {
     staticClass: "fa-solid fa-thumbtack"
-  })])]);
+  }), _vm._v(" "), _c("input", {
+    staticClass: "p_form-keep-input",
+    attrs: {
+      name: "keep",
+      type: "checkbox"
+    },
+    domProps: {
+      checked: _vm.keepFlg
+    }
+  })]);
 };
 var staticRenderFns = [];
 render._withStripped = true;
