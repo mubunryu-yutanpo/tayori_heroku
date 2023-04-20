@@ -1,4 +1,4 @@
-@extends('Layouts.parent')
+@extends('layouts.parent')
 
 @section('title', 'ウンチ日記編集')
 
