@@ -59,7 +59,9 @@
     <div class="c_contents-diary">
             <p class="c_contents-diary-date">@if($food !== null){{ $food->date }}@endif</p>
             <div class="c_contents-diary-img">
+                @if($food !== null)
                 <img src="{{ $food->pic1 }}" alt="" class="c_contents-diary-img-item">
+                @endif
             </div>
             <p>@if($food !== null){{ $food->comment }}@endif</p>
             @if($food !== null)
