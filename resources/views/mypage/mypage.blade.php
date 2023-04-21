@@ -20,11 +20,11 @@
 
   <div class="c_contents-card">
     <div class="c_contents-title">
-        <h3 class="c_contents-title-text">@if($poof !== null){{ $poof->title }}@else まだ日記がありません @endif</h3>
+        <h3 class="c_contents-title-text">@if($poof !== null){{ $poof->title }}@else ウンチ日記 @endif</h3>
     </div>
     <div class="c_contents-diary">
             <p class="c_contents-diary-date">@if($poof !== null){{ $poof->date }}@endif</p>
-            <p>@if($poof !== null){{ $poof->comment }}@endif</p>
+            <p>@if($poof !== null){{ $poof->comment }}@else まだ日記がありません @endif</p>
             @if($poof !== null)
             <div class="c_submit ta-right">
               <button type="button" class="p_button-primary">
@@ -37,11 +37,11 @@
 
   <div class="c_contents-card">
     <div class="c_contents-title">
-        <h3 class="c_contents-title-text">@if($pee !== null){{ $pee->title }}@else まだ日記がありません @endif</h3>
+        <h3 class="c_contents-title-text">@if($pee !== null){{ $pee->title }}@else オシッコ日記 @endif</h3>
     </div>
     <div class="c_contents-diary">
             <p class="c_contents-diary-date">@if($pee !== null){{ $pee->date }}@endif</p>
-            <p>@if($pee !== null){{ $pee->comment }}@endif</p>
+            <p>@if($pee !== null){{ $pee->comment }}@else まだ日記がありません @endif</p>
             @if($pee !== null)
             <div class="c_submit ta-right">
               <button type="button" class="p_button-primary">
@@ -54,7 +54,7 @@
 
   <div class="c_contents-card">
     <div class="c_contents-title">
-        <h3 class="c_contents-title-text">@if($food !== null){{ $food->title }}@else まだ日記がありません @endif</h3>
+        <h3 class="c_contents-title-text">@if($food !== null){{ $food->title }}@else 食べたもの日記 @endif</h3>
     </div>
     <div class="c_contents-diary">
             <p class="c_contents-diary-date">@if($food !== null){{ $food->date }}@endif</p>
@@ -63,7 +63,7 @@
                 <img src="{{ $food->pic1 }}" alt="" class="c_contents-diary-img-item">
                 @endif
             </div>
-            <p>@if($food !== null){{ $food->comment }}@endif</p>
+            <p>@if($food !== null){{ $food->comment }}@else まだ日記がありません @endif</p>
             @if($food !== null)
             <div class="c_submit ta-right">
               <button type="button" class="p_button-primary">

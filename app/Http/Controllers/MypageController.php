@@ -30,13 +30,13 @@ class MypageController extends Controller
         $pee  = null;
         $food = null;
 
-        if(Poof::latest()->first() !== null){
+        if(Poof::where('user_id', $user_id)->latest()->first() !== null){
             $poof = Poof::latest()->first();
         }
-        if(Pee::latest()->first() !== null){
+        if(Pee::where('user_id', $user_id)->latest()->first() !== null){
             $pee = Pee::latest()->first();
         }
-        if(Food::latest()->first() !== null){
+        if(Food::where('user_id', $user_id)->latest()->first() !== null){
             $food = Food::latest()->first();
         }
         return view('mypage/mypage', compact('user','avatar', 'poof', 'pee', 'food') );
@@ -88,6 +88,18 @@ class MypageController extends Controller
 
         return view('/mypage/withdrow', compact('user'));
     }
+
+    // ユーザー情報削除
+    public function deleteUser($id){
+        if(!ctype_digit($id)){
+            return redirect('/welcome')->with('flash_message', __('不正な操作が行われました'));
+        }
+
+        User::where('id', $id)->delete();
+
+        return redirect('/')->with('flash_message', '退会しました。');
+    }
+
 
 
 }

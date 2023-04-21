@@ -18,3 +18,9 @@ p{
 a,button,input{
     cursor: pointer;
 }
+a{
+    color: $black;
+    &:hover{
+        color: $brown;
+    }
+}

@@ -30,6 +30,7 @@ Route::group(['middleware'=> 'auth'], function(){
     Route::post('/prof/{id}/edit', 'MypageController@profUpdate')->name('prof_update');
     Route::get('/logout', 'MypageController@logout')->name('logout');
     Route::get('/{id}/withdrow', 'MypageController@withdrow')->name('withdrow');
+    Route::post('/{id}/withdrow/delete', 'MypageController@deleteUser')->name('delete_user');
 
     Route::get('/newFood', 'FoodController@new')->name('new_food');
     Route::post('/newFood', 'FoodController@create')->name('create_food');

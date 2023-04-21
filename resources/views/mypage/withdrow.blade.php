@@ -16,7 +16,7 @@
     <p class="c_contents-withdrow-about">現在保存されている全ての日記データがTayoriから完全に削除されます。</p>
     <p class="c_contents-withdrow-about">削除されたデータの復元はできません。</p>
 
-    <form action="" method="post">
+    <form action="{{ route('delete_user', $user->id) }}" method="post">
         @csrf
         <div class="c_submit ta-center">
           <button type="submit" class="c_submit-btn" onclick='return confirm("全データを削除して退会します");'>退会する</button>

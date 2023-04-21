@@ -71,6 +71,10 @@
             <button type="submit" class="c_submit-btn">登録する</button>
         </div>
 
+        <div class="">
+            <a href="{{ route('withdrow', $user->id) }}" class="p_withdrow-text">退会はこちら</a>
+        </div>
+
      </div><!--form-wrap-->
   </form>
 
