@@ -54,7 +54,7 @@
                   </button>
                   <div class="p_menu-submenu-items js-submenu">
                     <li class="p_menu-list"><a href="{{ route('new_poof') }}" class="p_menu-link">日記作成</a></li>
-                    <li class="p_menu-list"><a href="{{ route('index_poof') }}" class="p_menu-link">日記編集</a></li>
+                    <li class="p_menu-list"><a href="{{ route('index_poof', Auth::user()->id) }}" class="p_menu-link">日記編集</a></li>
                   </div>
                 </div>
 
@@ -66,7 +66,7 @@
                   </button>
                   <div class="p_menu-submenu-items js-submenu">
                     <li class="p_menu-list"><a href="{{ route('new_pee') }}" class="p_menu-link">日記作成</a></li>
-                    <li class="p_menu-list"><a href="{{ route('index_pee') }}" class="p_menu-link">日記編集</a></li>
+                    <li class="p_menu-list"><a href="{{ route('index_pee', Auth::user()->id) }}" class="p_menu-link">日記編集</a></li>
                   </div>
                 </div>
 
@@ -78,7 +78,7 @@
                   </button>
                   <div class="p_menu-submenu-items js-submenu">
                     <li class="p_menu-list"><a href="{{ route('new_food') }}" class="p_menu-link">日記作成</a></li>
-                    <li class="p_menu-list"><a href="{{ route('index_food') }}" class="p_menu-link">日記編集</a></li>
+                    <li class="p_menu-list"><a href="{{ route('index_food', Auth::user()->id) }}" class="p_menu-link">日記編集</a></li>
                   </div>
                 </div>
           @else

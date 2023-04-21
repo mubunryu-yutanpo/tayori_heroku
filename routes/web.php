@@ -37,21 +37,21 @@ Route::group(['middleware'=> 'auth'], function(){
     Route::get('/{id}/foodEdit', 'FoodController@edit')->name('edit_food');
     Route::post('/{id}/foodEdit', 'FoodController@update')->name('update_food');
     Route::post('/{id}/foodEdit/delete', 'FoodController@delete')->name('delete_food');
-    Route::get('/index/food', 'FoodController@index')->name('index_food');
+    Route::get('/index/{id}/food', 'FoodController@index')->name('index_food');
 
     Route::get('/newPee', 'PeeController@new')->name('new_pee');
     Route::post('/newPee', 'PeeController@create')->name('create_pee');
     Route::get('/{id}/peeEdit', 'PeeController@edit')->name('edit_pee');
     Route::post('/{id}/peeEdit', 'PeeController@update')->name('update_pee');
     Route::post('/{id}/peeEdit/delete', 'PeeController@delete')->name('delete_pee');
-    Route::get('/index/pee', 'PeeController@index')->name('index_pee');
+    Route::get('/index/{id}/pee', 'PeeController@index')->name('index_pee');
 
     Route::get('/newPoof', 'PoofController@new')->name('new_poof');
     Route::post('/newPoof', 'PoofController@create')->name('create_poof');
     Route::get('/{id}/poofEdit', 'PoofController@edit')->name('edit_poof');
     Route::post('/{id}/poofEdit', 'PoofController@update')->name('update_poof');
     Route::post('/{id}/poofEdit/delete', 'PoofController@delete')->name('delete_poof');
-    Route::get('/index/poof', 'PoofController@index')->name('index_poof');
+    Route::get('/index/{id}/poof', 'PoofController@index')->name('index_poof');
 });
 
 

@@ -84,13 +84,13 @@
                         <img src="" alt="" class="c_file-img js-file-img">
                         ドラッグ＆ドロップ
                     </label>
-                 @endfor
-                <!-- error -->
-                @error('frequency')
+                    <!-- error -->
+                    @error('pic'.$i)
                     <span class="invalid-feedback" role="alert">
                       <strong>{{ $message }}</strong>
                     </span>
-                @enderror
+                    @enderror
+                 @endfor
             </div>
         </div>
 

@@ -13,9 +13,10 @@ use App\Pee;
 class PeeController extends Controller
 {
     // 日記一覧へ
-    public function index(Request $request)
+    public function index(Request $request, $id)
     {
-        $query = Pee::query();
+        $user = Auth::user();
+        $query = Pee::where('user_id', $id);
     
         $sort = $request->query('sort');
         if ($sort === 'asc') {
@@ -26,7 +27,7 @@ class PeeController extends Controller
     
         $pees = $query->paginate(7);
     
-        return view('/mypage/indexPee', compact('pees'));
+        return view('/mypage/indexPee', compact('user', 'pees'));
     }
 
     // 日記作成ページへ

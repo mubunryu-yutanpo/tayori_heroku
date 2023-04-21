@@ -10,7 +10,7 @@
   </div>
 
   <div class="c_main-sort">
-    <form method="GET" action="{{ route('index_food') }}">
+    <form method="GET" action="{{ route('index_food', $user->id) }}">
       <select name="sort" id="sort" onchange="this.form.submit()">
         <option value="asc" {{ request()->query('sort') === 'asc' ? 'selected' : '' }}>古い順</option>
         <option value="desc" {{ request()->query('sort') === 'desc' ? 'selected' : '' }}>新しい順</option>

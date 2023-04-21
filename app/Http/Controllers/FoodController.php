@@ -13,9 +13,10 @@ use App\Food;
 class FoodController extends Controller
 {
     // 日記一覧へ
-    public function index(Request $request)
+    public function index(Request $request, $id)
     {
-        $query = Food::query();
+        $user = Auth::user();
+        $query = Food::where('user_id', $id);
     
         $sort = $request->query('sort');
         if ($sort === 'asc') {
@@ -26,7 +27,7 @@ class FoodController extends Controller
     
         $foods = $query->paginate(7);
     
-        return view('/mypage/indexFood', compact('foods'));
+        return view('/mypage/indexFood', compact('user', 'foods'));
     }
 
     // 日記作成ページへ

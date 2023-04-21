@@ -76,21 +76,21 @@
                 <p class="">食べたもの</p>
             </div>
             <div class="p_form-content-items">
-                @for($i = 1; $i <= 3; $i++)
+            @for($i = 1; $i <= 3; $i++)
                     <p class="">画像{{ $i }}</p>
                     <label class="c_file-label">
                         <input type="hidden" name="MAX_FILE_SIZE" value="3145728">
                         <input type="file" class="c_file-input js-file-input" name="pic{{ $i }}" enctype="multipart/form-data">
-                        <img src="{{ $food->{ 'pic'.$i } }}" alt="" class="c_file-img js-file-img">
+                        <img src="" alt="" class="c_file-img js-file-img">
                         ドラッグ＆ドロップ
                     </label>
-                 @endfor
-                <!-- error -->
-                @error('frequency')
+                    <!-- error -->
+                    @error('pic'.$i)
                     <span class="invalid-feedback" role="alert">
                       <strong>{{ $message }}</strong>
                     </span>
-                @enderror
+                    @enderror
+                 @endfor
             </div>
         </div>
 
